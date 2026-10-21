@@ -28,6 +28,13 @@
 - **Solución implementada:** al hacer clic, la página se desplaza suavemente hasta la biografía y la resalta por tres segundos. Si se vuelve a pulsar, el resaltado permanece durante tres segundos desde la última activación. La interacción solo se registra cuando existen el botón y la biografía.
 - **Evidencia:** [script.js](../js/script.js), desplazamiento, resaltado temporal y comprobación de los elementos; [styles.css](../css/styles.css), transición y estilo del resaltado.
 
+## Mejora adicional: diseño responsive
+
+- **Problema:** en pantallas pequeñas, el encabezado, la navegación, la presentación y las secciones en dos columnas podían quedar apretados o requerir desplazamiento horizontal.
+- **Por qué corregirlo:** el sitio debe ser legible y fácil de navegar en teléfonos y tabletas, además de computadoras.
+- **Solución implementada:** se añadieron puntos de adaptación para tabletas (hasta 768 px) y teléfonos (hasta 600 px). La navegación puede ocupar varias líneas, la presentación ajusta su imagen y contenido, y las secciones pasan de dos columnas a una sola en pantallas pequeñas. También se ajustaron tamaños, márgenes, formularios y línea de tiempo, y se desactivó el ajuste obligatorio del scroll en móviles.
+- **Evidencia:** [styles.css](../css/styles.css), bloques `@media (max-width: 768px)` y `@media (max-width: 600px)`.
+
 ## Evidencia y archivos del proyecto
 
 - [Página principal](../index.html)
@@ -38,6 +45,8 @@
 
 Para comprobar la interacción, abre la página principal y pulsa «Conoce su historia»: la biografía debe quedar centrada en la pantalla y resaltada brevemente.
 
+Para comprobar el diseño responsive, abre el sitio en un teléfono o reduce el ancho de la ventana del navegador; la navegación debe ajustarse y el contenido debe mostrarse en una sola columna en pantallas pequeñas.
+
 ## Conclusión
 
-El sitio ya cuenta con ajustes de carga, una descripción para buscadores y un botón que conduce a la biografía con una señal visual temporal. Estas mejoras atienden aspectos de rendimiento, SEO y usabilidad; el efecto en los puntajes debe confirmarse ejecutando Lighthouse antes y después en las mismas condiciones.
+El sitio ya cuenta con ajustes de carga, una descripción para buscadores, un botón que conduce a la biografía con una señal visual temporal y estilos adaptados a pantallas pequeñas. Estas mejoras atienden aspectos de rendimiento, SEO y usabilidad; el efecto en los puntajes debe confirmarse ejecutando Lighthouse antes y después en las mismas condiciones.
