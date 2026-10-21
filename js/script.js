@@ -3,9 +3,14 @@ const biografiaText = document.getElementById("biografia2");
 
 // Registra el efecto al hacer clic solo cuando existen ambos elementos.
 if (historiaButton && biografiaText) {
+    let highlightTimeout;
+
     historiaButton.addEventListener("click", () => {
+        biografiaText.scrollIntoView({ behavior: "smooth", block: "center" });
         biografiaText.classList.add("sombra");
-        setTimeout(() => {
+
+        clearTimeout(highlightTimeout);
+        highlightTimeout = setTimeout(() => {
             biografiaText.classList.remove("sombra");
         }, 3000);
     });
@@ -111,4 +116,3 @@ if (historiaButton && biografiaText) {
 // }
 
 // arrowSaludar("Oscar", "william");
-

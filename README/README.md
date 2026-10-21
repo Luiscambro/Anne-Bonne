@@ -21,12 +21,12 @@
 - **Solución implementada:** se agregó una etiqueta `meta description` que resume la biografía, las batallas y el legado de Anne Bonny.
 - **Evidencia:** [index.html](../index.html), sección `<head>`.
 
-### 3. Interacción dependiente de elementos de una sola página — Best Practices
+### 3. El botón de historia no llevaba a la biografía — Usabilidad e interacción
 
-- **Problema:** el botón «Conoce su historia» y el bloque de biografía no están presentes en todas las páginas. Intentar registrar la interacción sin comprobar esos elementos puede producir un error de JavaScript.
-- **Por qué corregirlo:** validar los elementos antes de usarlos evita errores innecesarios y hace que el mismo archivo JavaScript pueda coexistir de forma segura con páginas que no contienen esa interacción.
-- **Solución implementada:** se comprueba que ambos elementos existan antes de registrar el evento. Al hacer clic, se añade temporalmente el efecto visual y se retira después de tres segundos.
-- **Evidencia:** [script.js](../js/script.js), comprobación de elementos y evento del botón.
+- **Problema:** el botón «Conoce su historia» solo resaltaba la biografía y no llevaba a las personas hasta ella.
+- **Por qué corregirlo:** un botón que promete conocer la historia debe facilitar el acceso a la información relacionada, sin obligar a buscarla manualmente.
+- **Solución implementada:** al hacer clic, la página se desplaza suavemente hasta la biografía y la resalta por tres segundos. Si se vuelve a pulsar, el resaltado permanece durante tres segundos desde la última activación. La interacción solo se registra cuando existen el botón y la biografía.
+- **Evidencia:** [script.js](../js/script.js), desplazamiento, resaltado temporal y comprobación de los elementos; [styles.css](../css/styles.css), transición y estilo del resaltado.
 
 ## Evidencia y archivos del proyecto
 
@@ -36,6 +36,8 @@
 - [JavaScript de la interacción](../js/script.js)
 - La evidencia de puntajes debe tomarse de la auditoría Lighthouse realizada en el navegador. Para comparar resultados, ejecutar Lighthouse nuevamente con las mejoras y guardar ambas capturas.
 
+Para comprobar la interacción, abre la página principal y pulsa «Conoce su historia»: la biografía debe quedar centrada en la pantalla y resaltada brevemente.
+
 ## Conclusión
 
-El sitio ya cuenta con ajustes de carga, una descripción para buscadores y una interacción JavaScript protegida ante la ausencia de elementos. Estas mejoras atienden aspectos de rendimiento, SEO y buenas prácticas; el efecto en los puntajes debe confirmarse ejecutando Lighthouse antes y después en las mismas condiciones.
+El sitio ya cuenta con ajustes de carga, una descripción para buscadores y un botón que conduce a la biografía con una señal visual temporal. Estas mejoras atienden aspectos de rendimiento, SEO y usabilidad; el efecto en los puntajes debe confirmarse ejecutando Lighthouse antes y después en las mismas condiciones.
