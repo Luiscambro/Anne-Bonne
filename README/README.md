@@ -35,6 +35,12 @@
 - **Solución implementada:** se añadieron puntos de adaptación para tabletas (hasta 768 px) y teléfonos (hasta 600 px). La navegación puede ocupar varias líneas, la presentación ajusta su imagen y contenido, y las secciones pasan de dos columnas a una sola en pantallas pequeñas. También se ajustaron tamaños, márgenes, formularios y línea de tiempo, y se desactivó el ajuste obligatorio del scroll en móviles.
 - **Evidencia:** [styles.css](../css/styles.css), bloques `@media (max-width: 768px)` y `@media (max-width: 600px)`.
 
+## Corrección adicional: enlaces de navegación
+
+- **Problema:** algunos enlaces del encabezado apuntaban a secciones inexistentes en la página de contacto o abrían una pestaña nueva innecesariamente.
+- **Solución implementada:** los enlaces de esa página ahora regresan a las secciones correspondientes de `index.html`; el enlace «Contacto» lleva al formulario. En la página principal, «Inicio» lleva a la presentación y «Contacto» abre el formulario en la misma pestaña.
+- **Evidencia:** navegación en [index.html](../index.html) y [contacto.html](../contacto.html).
+
 ## Evidencia y archivos del proyecto
 
 - [Página principal](../index.html)
