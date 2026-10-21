@@ -1,0 +1,471 @@
+/*Declaracion de variables*/
+:root {
+    /*colores*/
+    --color-paper: rgb(227, 214, 192);
+    --color-paper-dark: rgb(205, 185, 156);
+
+    --color-brown: rgb(164, 132, 98);
+    --color-brown-dark: rgb(99, 72, 52);
+
+    --color-red: rgb(120, 18, 18);
+    --color-red-dark: rgb(84, 10, 10);
+
+    --color-black: rgb(15, 15, 15);
+
+    --color-gold: rgb(180, 148, 88);
+
+    --color-text: rgb(45, 35, 25);
+    --color-text-light: rgb(242, 236, 222);
+
+    /* Colores */
+    /*--paper: #E3D6C0;
+    --paper-dark: #CDB99C;
+
+    --wine: #781212;
+    --wine-dark: #540A0A;
+
+    --gold: #B49458;
+
+    --black: #0F0F0F;
+
+    --text: #2D2319;
+    --text-light: #F2ECDE;*/
+
+    /* Tipografías */
+
+    --font-title: 'Pirata One', serif;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Lora', serif;
+    --font-quote: 'Cormorant Garamond', serif;
+}
+
+/***************Estilos base para el todo el documento ***********/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+
+}
+
+body {
+    font-size: 16px;
+    /* 1 rem = 10px pero adaptable a pantallas de muchos px*/
+    
+    font-family: var(--font-body);
+    background-image: linear-gradient(to top, #DFE9F3 0%, var(--blanco) 100%);
+    /* Ocupa el ancho disponible para evitar margenes blancos laterales. */
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Título principal */
+h1 {
+    font-family: var(--font-heading);
+    margin: 0;
+}
+
+/* Encabezados de sección */
+h2,
+h3 {
+    font-family: var(--font-heading);
+    margin: 0;
+}
+
+/* Párrafos */
+p {
+    font-family: var(--font-body);
+}
+
+/* Citas */
+blockquote {
+    font-family: var(--font-quote);
+    font-style: italic;
+}
+
+
+/***Encabezado***/
+header {
+    display: flex;
+    background-color: var(--color-black);
+}
+
+header div {
+    display: inline;
+}
+
+header div h1 {
+    color: var(--color-paper-dark);
+    font-size: 3rem;
+    margin: 2rem 0 0 0;
+}
+
+header div p {
+    color: var(--color-paper-dark);
+    margin: 0 0 2rem 0;
+}
+
+.jolly-roger {
+    color: white;
+    width: 100px;
+}
+
+.jolly-roger:hover {
+    color: var(--color-paper);
+    /* dorado antiguo */
+}
+
+nav {
+    display: flex;
+    /*flex-direction: row;*/
+    margin: auto 2rem auto auto;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    color: var(--color-paper-dark);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: var(--color-paper);
+    font-weight: 900;
+}
+
+/***Presentacion***/
+main {
+    width: 100%;
+}
+
+#presentacion {
+    /* El JPEG optimizado conserva su proporcion y se muestra completo. */
+    background-image: url('../img/annebonny.jpg');
+    display: flex;
+    aspect-ratio: 1717 / 916;
+    background-size: 100% 100%;
+}
+
+#presentacion div {
+    width: 40%;
+    height: 100%;
+}
+
+#presentacion h2 {
+    font-family: var(--font-title);
+    font-size: 6rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+#presentacion h3 {
+    color: var(--color-red);
+    font-family: var(--font-heading);
+    text-align: center;
+}
+
+#presentacion svg {
+    /* Mantiene contraste legible al pasar el cursor sobre la navegacion. */
+    color: var(--color-paper);
+    width: 34px;
+    padding: 2px 2px;
+    margin: 0 8px;
+    margin-left: 0;
+}
+
+button {
+    background-    color: var(--color-paper);
+    margin-top: 15px;
+    width: 20rem;
+    height: 4rem;
+    border: none;
+    border-radius: 8px;
+    color: var(--color-paper);
+    font-weight: 500;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/***Contenido principal***/
+
+#inicio {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#inicio::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    bottom: 55%;
+
+    width: 2px;
+    background-color: var(--color-paper-dark);
+}
+
+#biografia,
+#logros,
+#lineatiempo,
+#cita,
+#formulario {
+    /*width: 50%;*/
+    flex: 0 0 50%;
+    /*no crece, no me enconjo, mi tamaño es 50% */
+    height: auto;
+}
+
+#biografia,
+#logros {
+    background-color: var(--color-paper);
+}
+
+.titulo-seccion {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+.icono-principal {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-red-dark);
+    border-radius: 25px;
+    color: var(--color-paper);
+    margin-right: 2rem;
+    padding: 3px;
+}
+
+.principal-texto {
+    margin: 0 5rem auto 5rem;
+    padding: 2rem 0;
+}
+
+/***Logros***/
+.icono-secundario {
+    width: 50px;
+    height: 50px;
+    color: var(--color-black);
+    margin: 4px;
+    flex-shrink: 0;
+
+}
+
+.principal-texto ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.principal-texto ul {
+    padding: 0;
+}
+
+li div {
+    flex: 1;
+}
+
+.principal-texto ul li h3 {
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.principal-texto ul li p {
+    margin: 0;
+}
+
+/***Linea de Tiempo***/
+#lineatiempo,
+#cita,
+#legado {
+    background-color: #E3D6C0;
+
+    background-image:
+        radial-gradient(ellipse at center,
+            /*rgba(255, 255, 255, 0)*/
+            var(--color-paper) 50%,
+            /*rgba(120, 90, 50, 0.08)*/
+            var(--color-paper-dark) 100%);
+}
+
+.principal-texto ol {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 50px;
+    position: relative;
+}
+
+.principal-texto ol::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: var(--color-red-dark);
+}
+
+.principal-texto ol li {
+    position: relative;
+    margin-bottom: 25px;
+    font-size: 11px;
+    display: flex;
+    gap: 30px;
+
+}
+
+.principal-texto ol li::before {
+    content: "";
+    position: absolute;
+    left: -44px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--color-red-dark);
+}
+
+.principal-texto ol li span {
+    color: var(--color-red-dark);
+    font-weight: 700;
+}
+
+/***cita***/
+#cita {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cita div {
+    display: grid;
+    place-items: center;
+    background: #DCC6A3;
+
+    border: 1px solid #B89C75;
+
+    border-radius: 12px;
+
+    box-shadow:
+        inset 0 0 25px rgba(120, 80, 40, .15),
+        inset 0 0 80px rgba(255, 255, 255, .15),
+        0 4px 10px rgba(0, 0, 0, .12);
+}
+
+.quote {
+    font-size: 10rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--color-red-dark);
+    margin: 0;
+}
+
+blockquote {
+    font-family: var(--font-quote);
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    z-index: 10;
+    bottom: 20px
+}
+
+cite {
+    color: var(--color-red-dark);
+    margin: 4rem;
+}
+
+/***Legado***/
+#legado>div>div {
+    display: inline;
+}
+
+#legado svg {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+}
+
+#legado h2 {
+    display: inline;
+    position: relative;
+    bottom: 30px;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    background-color: var(--color-black);
+    text-transform: capitalize;
+}
+
+footer p {
+    color: var(--color-paper);
+    margin: 0 auto;
+}
+
+/***Formulario***/
+#formulario {
+    background-image:
+        radial-gradient(ellipse at center,
+            /*rgba(255, 255, 255, 0)*/
+            var(--color-paper) 50%,
+            /*rgba(120, 90, 50, 0.08)*/
+            var(--color-paper-dark) 100%);
+
+}
+
+form {
+    display: block;
+    border: 1px solid var(--color-brown-dark);
+    border-radius: 8px;
+    padding: 20px;
+    border-left: 2px solid var(--color-black);
+    border-bottom: 2px solid var(--color-black);
+}
+
+label {
+    display: block;
+    margin: 10px 0 4px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--color-brown);
+    border-bottom: 2px solid var(--color-brown-dark);
+    border-left: 2px solid var(--color-brown-dark);
+    border-radius: 3px;
+}
+
+textarea {
+    height: 100px;
+    width: 100%;
+    max-width: 660px;
+    resize: vertical;
+}
+
+.mi-seccion {
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.sombra {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
